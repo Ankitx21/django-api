@@ -3,4 +3,5 @@ from . import views
 
 urlpatterns = [
     path('energy-predictions/', views.energy_predictions, name='energy_predictions'),
+    path('energy/', include('energy.urls')),
 ]
