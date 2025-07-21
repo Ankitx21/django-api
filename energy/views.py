@@ -68,7 +68,7 @@ def energy_predictions(request):
 def upload_csv(request):
     if request.method == 'POST' and request.FILES.get('file'):
         csv_file = request.FILES['file']
-        csv_dir = os.environ.get('CSV_DIR', '/tmp/')
+        csv_dir = os.environ.get('CSV_DIR', 'data')
         os.makedirs(csv_dir, exist_ok=True)  # Ensure the directory exists
         save_path = os.path.join(csv_dir, csv_file.name)
         with open(save_path, 'wb+') as destination:
